@@ -5,15 +5,15 @@ In this assignment, you will be tasked to complete the PyTeal stateless program 
 The transactions performed is in `scripts/main.js` consists of an asset create transaction, followed by an atomic transfer consisting of 
 
 1. Asset opt in transaction
-2. Asset transfer transaction
-3. Payment transaction of 5 Algos to the asset creator
+2. Payment transaction of 5 Algos to the asset creator
+3. Asset transfer transaction
 
 If the checks passes, the contract will be able to sign the transactions on behalf of the asset receiver account and submit them.
 
 Perform the following checks in the program,
 
 1. No. of transactions in the group
-2. Transactions are in order (Asset Opt In, Asset Transfer, Payment)
+2. Transactions are in order (Asset Opt In, Payment, Asset Transfer)
 3. Correct receiver address
 4. Correct amount of Algos in the payment
 5. Correct creator address
