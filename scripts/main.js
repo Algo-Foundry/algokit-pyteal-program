@@ -1,6 +1,4 @@
 const algosdk = require("algosdk");
-const fs = require("fs");
-const path = require("path");
 require("dotenv").config();
 const {
   createAsset,
