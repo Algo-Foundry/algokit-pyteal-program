@@ -1,45 +1,41 @@
-# algokit-pyteal-program
+# PyTeal assignment
 
-This project has been generated using AlgoKit. See below for default getting started instructions.
+In this assignment, you will be tasked to complete the PyTeal stateless program in `pyteal_program.py` that checks the atomic transfer performed in `scripts/main.js`.
 
-# Setup
+The transactions performed is in `scripts/main.js` consists of an asset create transaction, followed by an atomic transfer consisting of 
 
-### Initial setup
+1. Asset opt in transaction
+2. Asset transfer transaction
+3. Payment transaction of 5 Algos to the asset creator
 
-1. Clone this repository: `git clone {repository_url}`
-2. Install pre-requisites:
-   - If you have AlgoKit installed, run `algokit bootstrap poetry` within this folder;
-   - or:
-     - Install `Python` - [Link](https://www.python.org/downloads/): The minimum required version is `3.10`. Ensure you can execute `python -V` and get `3.10`+.
-     - Install `Poetry` - [Link](https://python-poetry.org/docs/#installation): The minimum required version is `1.2`. Ensure you can execute `poetry -V` and get `1.2`+.
-     - If you're not using PyCharm, then run `poetry install` in the root directory (this should set up `.venv` and also install all Python dependencies) - PyCharm will do this for you automatically on startup 🪄.
-3. Open the project and start debugging / developing via:
-   - VS Code
-     1. Open the repository root in VS Code
-     2. Install recommended extensions
-     3. Hit F5 (or whatever you have debug mapped to) and it should start running with breakpoint debugging.
-        (**NOTE:** The first time you run, VS Code may prompt you to select the Python Interpreter. Select python from the .venv path within this project)
-   - IDEA (e.g. PyCharm)
-     1. Open the repository root in the IDE
-     2. It should automatically detect it's a Poetry project and set up a Python interpreter and virtual environment.
-     3. Hit Shift+F9 (or whatever you have debug mapped to) and it should start running with breakpoint debugging.
-   - Other
-     1. Open the repository root in your text editor of choice
-     2. In a terminal run `poetry shell`
-     3. Run `python app.py` through your debugger of choice
+If the checks passes, the contract will be able to sign the transactions on behalf of the asset receiver account and submit them.
 
-### Subsequently
+Perform the following checks in the program,
 
-1. If you update to the latest source code and there are new dependencies you will need to run `poetry install` again
-2. Follow step 3 above
+1. No. of transactions in the group
+2. Correct asset ID
+3. Correct receiver address
+4. Correct amount of Algos in the payment
+5. Correct creator address
 
-# Tools
+## Setup instructions
 
-This project makes use of Python to build Algorand smart contracts. The following tools are in use:
+### Install python packages via AlgoKit
+run `algokit bootstrap poetry` within this folder
 
-- [Poetry](https://python-poetry.org/): Python packaging and dependency management.- [Black](https://github.com/psf/black): A Python code formatter.
-- [Ruff](https://github.com/charliermarsh/ruff): An extremely fast Python linter.
+### Install JS packages
+run `yarn install`
 
-- [mypy](https://mypy-lang.org/): Static type checker.
+### Update environement variables
+1. Copy `.env.example` to `.env`
+2. Update Algorand Sandbox credentials in `.env` file
+3. Update accounts in `.env` file
 
-It has also been configured to have a productive dev experience out of the box in VS Code, see the [.vscode](./.vscode) folder.
+### Initialize virtual environment
+run `poetry shell`
+
+### Compile contracts
+run `python pyteal_program.py`
+
+### Submit transaction
+run `node scripts/main.js`
