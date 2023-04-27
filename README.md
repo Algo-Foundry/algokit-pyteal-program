@@ -8,7 +8,7 @@ The transactions performed is in `scripts/main.js` consists of an asset create t
 2. Payment transaction of 5 Algos to the asset creator
 3. Asset transfer transaction
 
-If the checks passes, the contract will be able to sign the transactions on behalf of the asset receiver account and submit them.
+If the checks passes, the program will be able to sign the transactions on behalf of the asset receiver account and submit them.
 
 Perform the following checks in the program,
 
