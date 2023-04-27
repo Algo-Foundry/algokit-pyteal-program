@@ -13,7 +13,7 @@ If the checks passes, the contract will be able to sign the transactions on beha
 Perform the following checks in the program,
 
 1. No. of transactions in the group
-2. Correct asset ID
+2. Transactions are in order (Asset Opt In, Asset Transfer, Payment)
 3. Correct receiver address
 4. Correct amount of Algos in the payment
 5. Correct creator address
